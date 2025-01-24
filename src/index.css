@@ -84,11 +84,6 @@ header{
        padding: 0 20px;
 }
 
-.dsc-header-client{
-    color: var(--dsc-color-font-primary);
-    background-color: var(--dsc-color-bg-secondary);
-}
-
 .dsc-header-admin{
     background-color: var(--dsc-color-bg-quaternary);
     color: var(--dsc-color-font-tertiary);
@@ -188,18 +183,6 @@ nav a {
     background-color: var(--dsc-color-btn-primary);
 }
 
-.dsc-btn-blue {
-    border: none;
-    background-color: var(--dsc-color-btn-primary);
-    color: var(--dsc-color-font-tertiary);
-}
-
-.dsc-btn-white {
-    background-color: var(--dsc-color-btn-inverse);
-    color: var(--dsc-color-btn-primary);
-    border: 1px solid var(--dsc-color-btn-primary);   
-}
-
 .dsc-btn-page-container {
     width: 100%;
     display: grid;
@@ -207,17 +190,6 @@ nav a {
     height: 42px;
     border-radius: 4px;
     
-}
-
-.dsc-btn-next-page {
-    border: 1px solid var(--dsc-color-btn-primary);
-    padding: 10px;
-    border-radius: 4px;
-    color: var(--dsc-color-btn-primary);
-    text-align: center;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
 }
 
 @media (min-width: 576px) {
@@ -229,56 +201,6 @@ nav a {
         border-radius: 4px;
         
     }
-}
-
-/*--------------------------------------------------------------------------------------------*/
-/* Search bar styles */
-
-.dsc-search-bar {
-    height: 40px;
-    display: flex;
-    color: var(--dsc-color-font-primary);
-}
-
-.dsc-search-bar button, .dsc-search-bar input{
-    border: 1px solid var(--dsc-color-card-border);
-
-}
-
-.dsc-search-bar input{
-    width: calc(100% - 80px);
-    border-right: none;
-    border-left: none;
-    padding: 0 10px;
-    font-size: 16px;
-    color: var(--dsc-color-font-primary);
-}
-
-.dsc-search-bar input:focus {
-    outline: none;
-}
-
-.dsc-search-bar input::placeholder {
-    color: var(--dsc-color-font-placeholder);
-}
-
-.dsc-search-bar button{
-    width: 40px;
-    color: var(--dsc-color-font-primary);
-}
-
-.dsc-search-bar button[type="submit"] {
-    border-right: none;  
-    background-color: var(--dsc-color-card-bg);  
-    border-radius: 4px 0 0 4px;
-    cursor: pointer;
-  }
-
-.dsc-search-bar button[type="reset"]{
-    border-left: none;
-    background-color: var(--dsc-color-card-bg);
-    border-radius: 0 4px 4px 0;
-    cursor: pointer;
 }
 
 /*--------------------------------------------------------------------------------------------*/
