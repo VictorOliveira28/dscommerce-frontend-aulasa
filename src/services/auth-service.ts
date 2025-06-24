@@ -3,8 +3,8 @@ import { CredentialsDTO } from "../models/auth";
 import { CLIENT_ID, CLIENT_SECRET } from "../utils/system";
 import { AxiosRequestConfig } from "axios";
 import { requestBackend } from "../utils/requests";
+import * as accessTokenRepostory from "../localstorage/access-token-repository";
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function loginRequest(loginData: CredentialsDTO) {
   const headers = {
     "Content-Type": "application/x-www-form-urlencoded",
@@ -24,4 +24,16 @@ export function loginRequest(loginData: CredentialsDTO) {
   };
 
   return requestBackend(config);
+}
+
+export function logout() {
+  accessTokenRepostory.remove();
+}
+
+export function saveAccessToken(token: string) {
+  accessTokenRepostory.save(token);
+}
+
+export function getAccessToken() {
+  accessTokenRepostory.get();
 }
