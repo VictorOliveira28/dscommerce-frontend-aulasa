@@ -58,6 +58,4 @@ export function isAuthenticated(): boolean {
     return true;
   }
   return false;
-
-  //return  ? true : false;
 }
