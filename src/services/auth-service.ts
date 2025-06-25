@@ -31,9 +31,9 @@ export function logout() {
 }
 
 export function saveAccessToken(token: string) {
-  accessTokenRepostory.save(token);
+  return accessTokenRepostory.save(token);
 }
 
 export function getAccessToken() {
-  accessTokenRepostory.get();
+  return accessTokenRepostory.get();
 }
