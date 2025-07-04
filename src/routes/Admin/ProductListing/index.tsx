@@ -5,6 +5,8 @@ import deleteButton from "../../../assets/delete.svg";
 import computerImg from "../../../assets/computer.png";
 import { useEffect, useState } from "react";
 import { ProductDTO } from "../../../models/product";
+import SearchBar from "../../../components/SearchBar";
+import ButtonNextPage from "../../../components/ButtonNextPage";
 
 type QueryParams = {
   page: number;
@@ -32,6 +34,15 @@ export default function ProductListing() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [queryParams]);
 
+  function handleSearch(searchText: string) {
+    setProducts([]);
+    setQueryParam({ ...queryParams, page: 0, name: searchText });
+  }
+
+  function handleNextPageClick() {
+    setQueryParam({ ...queryParams, page: queryParams.page + 1 });
+  }
+
   return (
     <>
       <main>
@@ -42,11 +53,7 @@ export default function ProductListing() {
             <div className="dsc-btn dsc-btn-white">Novo</div>
           </div>
 
-          <form className="dsc-search-bar">
-            <button type="submit">🔎︎</button>
-            <input type="text" placeholder="Nome do produto" />
-            <button type="reset">🗙</button>
-          </form>
+          <SearchBar onSearch={handleSearch} />
 
           <table className="dsc-table dsc-mb20 dsc-mt20">
             <thead>
@@ -61,7 +68,7 @@ export default function ProductListing() {
             </thead>
             <tbody>
               {products.map((product) => (
-                <tr>
+                <tr key={product.id}>
                   <td className="dsc-tb576">{product.id}</td>
                   <td>
                     <img
@@ -91,7 +98,11 @@ export default function ProductListing() {
             </tbody>
           </table>
 
-          <div className="dsc-btn-next-page">Carregar mais</div>
+          {!isLastPage && (
+            <div onClick={handleNextPageClick}>
+              <ButtonNextPage />
+            </div>
+          )}
         </section>
       </main>
     </>
