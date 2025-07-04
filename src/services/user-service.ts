@@ -3,7 +3,7 @@ import { AxiosRequestConfig } from "axios";
 
 export function findMe() {
   const config: AxiosRequestConfig = {
-    url: "/users/profile",
+    url: "/users/me",
     withCredentials: true,
   };
 
