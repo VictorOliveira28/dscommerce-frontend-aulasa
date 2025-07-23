@@ -1,4 +1,4 @@
-export const BASE_URL = "http://localhost:8080";
+export const BASE_URL = "http://localhost:8081";
 
 export const CART_KEY = "com.victoroliveira.catalogo/Cart";
 export const TOKEN_KEY = "com.victoroliveira.catalogo/Token";
